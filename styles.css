@@ -32,6 +32,10 @@
     padding: 0 48px;
 }
 
+.menu__wave {
+    display: none;
+}
+
 #navbar__logo {
     color:#C8A2C8;
     /* background-color: #C8A2C8;
@@ -99,7 +103,7 @@
         top: -1000px;
         opacity: 0;
         transition: all 0.5s ease;
-        height: 100vh;
+        height: auto;
         z-index: -1;
         background: #2D2D34;
     }
@@ -109,8 +113,18 @@
         opacity: 1;
         transition: all 0.5s ease;
         z-index: 99;
-        height: 90vh;
+        height: auto;
         font-size: 1.2rem;
+    }
+
+    .menu__wave.active {
+        position: absolute;
+        height: 100px;
+        width: 100%;
+        display: flex;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: -1;
     }
 
     #navbar__logo {
@@ -211,7 +225,6 @@
         background-color: #C8A2C8;
     }
 }
-
 
 .main__content h2 {
     font-family: 'Cabin', sans-serif;
