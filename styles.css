@@ -18,15 +18,18 @@
 }
 
 .navbar__container {
+    position: sticky;
+    top: 0;
+    left: 0;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     height: 80px;
     z-index: 1;
     width: 100%;
-    max-width: 1300px;
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 0 48px;
 }
 
 #navbar__logo {
@@ -96,7 +99,7 @@
         top: -1000px;
         opacity: 0;
         transition: all 0.5s ease;
-        height: 50vh;
+        height: 100vh;
         z-index: -1;
         background: #2D2D34;
     }
@@ -106,7 +109,7 @@
         opacity: 1;
         transition: all 0.5s ease;
         z-index: 99;
-        height: 60vh;
+        height: 90vh;
         font-size: 1.2rem;
     }
 
@@ -163,25 +166,52 @@
 }
 
 .main__container {
-    display: grid;
-    grid-template-columns: lfr, lfr;
-    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: top;
     justify-self: center;
-    margin: 0 auto;
-    height: 70vh;
+    margin: 0px;
+    height: 90vh;
     z-index: 1;
     width: 100%;
     max-width: 1300px;
-    padding: 0 50px;
+    padding: 64px 64px;
 }
 
 .main__content h1 {
     font-family: 'IBM Plex Mono', static;
     font-size: 4rem;
     color:#FAF9F6;
-    justify-content: center;
+    top: 0;
+    margin: 0px 1px;
     z-index: 1;
 }
+
+#typing-text {
+    display: inline; /* Ensure the text can wrap */
+    position: relative; /* Allows the pseudo-element to position itself relative to this element */
+}
+
+#typing-text::after {
+    content: ""; /* Empty content for the cursor */
+    position: absolute; /* Position relative to the parent */
+    right: 0;
+    width: 5px;
+    height: 5rem; /* Match the line height or adjust as needed */
+    background-color: #C8A2C8; /* Cursor color */
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to {
+        background-color: transparent;
+    }
+    50% {
+        background-color: #C8A2C8;
+    }
+}
+
 
 .main__content h2 {
     font-family: 'Cabin', sans-serif;
@@ -189,12 +219,13 @@
     color:#CAF7E2;
     justify-content: center;
     z-index: 1;
+    margin: 0px 1px;
 }
 
 .wave {
     position: absolute;
-    bottom: 0px;
     height: 100px;
     width: 100%;
-    display: block;
+    display: flex;
+    z-index: -1;
 }
