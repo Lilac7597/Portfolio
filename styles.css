@@ -88,7 +88,7 @@
         display: flex;
         justify-content: space-between;
         height: 80px;
-        z-index: 1;
+        z-index: 99;
         width: 100%;
         max-width: 1300px;
         padding: 0;
@@ -96,7 +96,7 @@
 
     .navbar.active {
         background: #131316;
-        transition: all 0.2s ease;
+        transition: all 0.3s ease;
         transition-delay: 150ms;
         z-index: 99;
         font-size: 1.2rem;
@@ -116,20 +116,20 @@
     }
 
     .menu__container.active {
-        top: 80px;
+        top: 76px;
         opacity: 1;
         transition: all 0.5s ease;
-        z-index: 99;
+        z-index: -1;
         height: auto;
     }
 
     .navbar__menu {
         display: grid;
         grid-template-columns: auto;
+        padding: 0 0 20px 0;
         margin: 0;
         width: 100%;
         position: absolute;
-        top: -1000px;
         opacity: 0;
         transition: all 0.5s ease;
         z-index: -1;
@@ -147,9 +147,9 @@
 
     .menu__wave {
         position: absolute;
-        top: -1000px;
         width: 100%;
         display: flex;
+        transition: all 0.5s ease;
         z-index: -1;
         opacity: 0;
     }
@@ -162,7 +162,7 @@
         display: flex;
         opacity: 1;
         transition: all 0.5s ease;
-        z-index: -1;
+        z-index: 1;
     }
 
     #navbar__logo {
@@ -213,42 +213,47 @@
     }
 }
 
-.main {
+.hero {
     background-color: #2D2D34;
 }
 
-.main__container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: top;
-    justify-self: center;
+.hero__container {
+    display: grid;
     margin: 0px;
     height: 90vh;
     z-index: 1;
     width: 100%;
     max-width: 1300px;
-    padding: 64px 64px;
+    padding: 32px 5vw;
 }
 
-.main__content h1 {
+.title {
     font-family: 'IBM Plex Mono', static;
-    font-size: 4rem;
+    font-size: 2.3rem;
     color:#FAF9F6;
-    top: 0;
-    margin: 0px 1px;
+    position: absolute;
+    top: 120px;
+    left: 5vw;
+    right: 5vw;
+    bottom: 250px;
+    padding: 1px;
     z-index: 1;
+    max-width: fit-content;
+    margin-inline: auto;
 }
 
 #typing-text {
     display: inline; /* Ensure the text can wrap */
     position: relative; /* Allows the pseudo-element to position itself relative to this element */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin: 0;
 }
 
 #typing-text::after {
     content: ""; /* Empty content for the cursor */
     position: absolute; /* Position relative to the parent */
-    right: 0;
+    left: 100%;
     width: 5px;
     height: 5rem; /* Match the line height or adjust as needed */
     background-color: #C8A2C8; /* Cursor color */
@@ -264,13 +269,30 @@
     }
 }
 
-.main__content h2 {
+.hero__content {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    position: absolute;
+    top: 300px;
+}
+
+.hero__content h2 {
     font-family: 'Cabin', sans-serif;
     font-size: 2rem;
     color:#CAF7E2;
     justify-content: center;
     z-index: 1;
-    margin: 0px 1px;
+    margin: 0;
+}
+
+.hero__content p {
+    font-family: 'Cabin', sans-serif;
+    font-size: 1rem;
+    color:#FAF9F6;
+    justify-content: center;
+    z-index: 1;
+    margin: 15px 1px;
 }
 
 .wave {
@@ -279,4 +301,14 @@
     width: 100%;
     display: flex;
     z-index: -1;
+}
+
+@media screen and (max-width: 700px) {
+    .hero__content {
+        top: 375px;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
 }

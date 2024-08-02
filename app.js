@@ -14,7 +14,7 @@ menu.addEventListener('click', function() {
 
 document.addEventListener('DOMContentLoaded', () => {
     const textElement = document.getElementById('typing-text');
-    const text = ["<h1>Hello World</h1>", "console.log( \"Hello World\" );", "cout << \"Hello World\" << endl;"];
+    const text = ["<h1>Hello World</h1>", "console.log(\"Hello World\");", "cout << \"Hello World\" << endl;"];
     const typingSpeed = 100; // Time in milliseconds between each character
     const deletingSpeed = 50; // Time in milliseconds between each character deletion
     const pauseBetweenTexts = 2000; // Pause before typing starts and after deleting ends
