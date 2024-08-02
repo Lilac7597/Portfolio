@@ -37,21 +37,9 @@
 }
 
 #navbar__logo {
-    color:#C8A2C8;
-    /* background-color: #C8A2C8;
-    background-image: linear-gradient(to top, #C8A2C8 0%, #88DDF2 100%);
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent; */
     display: flex;
     align-items: center;
     cursor: pointer;
-    text-decoration: none;
-    font-family: 'Cabin', sans-serif;
-    font-size: 2rem;
 }
 
 .navbar__menu {
@@ -61,7 +49,7 @@
 }
 
 .navbar__item {
-    height: 50px;
+    height: 52px;
 }
 
 .navbar__links {
@@ -70,7 +58,7 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    padding: 0 1rem;
+    padding-inline: 1rem;
     height: 100%;
 }
 
@@ -90,7 +78,6 @@
         height: 80px;
         z-index: 99;
         width: 100%;
-        max-width: 1300px;
         padding: 0;
     }
 
@@ -166,7 +153,11 @@
     }
 
     #navbar__logo {
-        padding-left: 25px;
+        padding-left: 20px;
+    }
+
+    .navbar__toggle {
+        cursor: pointer;
     }
 
     .navbar__toggle .bar {
@@ -175,6 +166,7 @@
         margin: 5px auto;
         transition: all 0.3s ease-in-out;
         background: #FAF9F6;
+        display: block;
     }
 
     .navbar__item {
@@ -193,11 +185,6 @@
         top: 20%;
         right: 5%;
         transform: translate(5%, 20%);
-    }
-
-    .navbar__toggle .bar {
-        display: block;
-        cursor: pointer;
     }
 
     #mobile-menu.is-active .bar:nth-child(2) {
@@ -220,23 +207,20 @@
 .hero__container {
     display: grid;
     margin: 0px;
-    height: 90vh;
+    height: 550px;
     z-index: 1;
-    width: 100%;
-    max-width: 1300px;
-    padding: 32px 5vw;
+    width: auto;
+    /*border: 5px solid #000;*/
+    margin: 0 48px 0 48px;
 }
 
 .title {
     font-family: 'IBM Plex Mono', static;
     font-size: 2.3rem;
     color:#FAF9F6;
-    position: absolute;
-    top: 120px;
-    left: 5vw;
-    right: 5vw;
-    bottom: 250px;
-    padding: 1px;
+    /*border: 5px solid #CAF7E2;*/
+    height: 250px;
+    padding: 32px 0 32px 0;
     z-index: 1;
     max-width: fit-content;
     margin-inline: auto;
@@ -271,10 +255,9 @@
 
 .hero__content {
     display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: auto;
-    position: absolute;
-    top: 300px;
+    grid-auto-flow: row;
+    grid-template-rows: 50px 50px 50px;
+    grid-template-columns: 50% 50%;
 }
 
 .hero__content h2 {
@@ -284,6 +267,7 @@
     justify-content: center;
     z-index: 1;
     margin: 0;
+    /*border: 5px solid #C8A2C8;*/
 }
 
 .hero__content p {
@@ -292,7 +276,9 @@
     color:#FAF9F6;
     justify-content: center;
     z-index: 1;
-    margin: 15px 1px;
+    margin: 15px 0px;
+    right: 50vw;
+    /*border: 5px solid #C8A2C8;*/
 }
 
 .wave {
@@ -305,7 +291,13 @@
 
 @media screen and (max-width: 700px) {
     .hero__content {
-        top: 375px;
+        top: 325px;
+        left: 24px;
+    }
+
+    .title {
+        left: 24px;
+        right: 24px;
     }
 
     .title {
