@@ -206,23 +206,32 @@
 
 .hero__container {
     display: grid;
+    grid-auto-flow: column;
+    grid-template-areas: 'title title'
+    'subtitle img'
+    'para img';
+    grid-template-rows: 45% 10% 45%;
+    grid-template-columns: 49% 49%;
+    column-gap: 2%;
     margin: 0px;
-    height: 550px;
+    height: 90dvh;
+    min-height: 550px;
     z-index: 1;
     width: auto;
-    /*border: 5px solid #000;*/
+    border: 5px solid #000;
     margin: 0 48px 0 48px;
 }
 
 .title {
+    grid-area: title;
     font-family: 'IBM Plex Mono', static;
-    font-size: 2.3rem;
+    font-size: 2.5rem;
     color:#FAF9F6;
-    /*border: 5px solid #CAF7E2;*/
-    height: 250px;
+    border: 5px solid #CAF7E2;
+    height: 100%;
     padding: 32px 0 32px 0;
     z-index: 1;
-    max-width: fit-content;
+    width: fit-content;
     margin-inline: auto;
 }
 
@@ -230,6 +239,7 @@
     display: inline; /* Ensure the text can wrap */
     position: relative; /* Allows the pseudo-element to position itself relative to this element */
     word-wrap: break-word;
+    word-break: break-word;
     overflow-wrap: break-word;
     margin: 0;
 }
@@ -253,32 +263,26 @@
     }
 }
 
-.hero__content {
-    display: grid;
-    grid-auto-flow: row;
-    grid-template-rows: 50px 50px 50px;
-    grid-template-columns: 50% 50%;
-}
-
-.hero__content h2 {
+.hero__container h2 {
+    grid-area: subtitle;
     font-family: 'Cabin', sans-serif;
     font-size: 2rem;
     color:#CAF7E2;
     justify-content: center;
     z-index: 1;
     margin: 0;
-    /*border: 5px solid #C8A2C8;*/
+    border: 5px solid #C8A2C8;
 }
 
-.hero__content p {
+.hero__container p {
+    grid-area: para;
     font-family: 'Cabin', sans-serif;
     font-size: 1rem;
     color:#FAF9F6;
     justify-content: center;
     z-index: 1;
-    margin: 15px 0px;
     right: 50vw;
-    /*border: 5px solid #C8A2C8;*/
+    border: 5px solid #C8A2C8;
 }
 
 .wave {
@@ -290,14 +294,14 @@
 }
 
 @media screen and (max-width: 700px) {
+    .hero__container {
+        margin: 0 24px 0 24px;
+        max-width: 100%;
+    }
+
     .hero__content {
         top: 325px;
         left: 24px;
-    }
-
-    .title {
-        left: 24px;
-        right: 24px;
     }
 
     .title {
