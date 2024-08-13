@@ -200,6 +200,8 @@
     }
 }
 
+/*Hero Section*/
+
 .hero {
     background-color: #2D2D34;
 }
@@ -218,7 +220,6 @@
     min-height: 550px;
     z-index: 1;
     width: auto;
-    border: 5px solid #000;
     margin: 0 48px 0 48px;
 }
 
@@ -227,7 +228,6 @@
     font-family: 'IBM Plex Mono', static;
     font-size: 2.5rem;
     color:#FAF9F6;
-    border: 5px solid #CAF7E2;
     height: 100%;
     padding: 32px 0 32px 0;
     z-index: 1;
@@ -271,7 +271,6 @@
     justify-content: center;
     z-index: 1;
     margin: 0;
-    border: 5px solid #C8A2C8;
 }
 
 .hero__container p {
@@ -282,7 +281,6 @@
     justify-content: center;
     z-index: 1;
     right: 50vw;
-    border: 5px solid #C8A2C8;
 }
 
 .wave {
@@ -293,18 +291,99 @@
     z-index: -1;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 700px) and (min-width: 301px) {
     .hero__container {
         margin: 0 24px 0 24px;
         max-width: 100%;
     }
 
-    .hero__content {
-        top: 325px;
-        left: 24px;
+    .title {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .hero__container {
+        margin: 0 24px 0 24px;
+        max-width: 100%;
     }
 
     .title {
-        font-size: 2rem;
+        font-size: 1.5rem;
+    }
+}
+
+/*Bio Section*/
+.bio {
+    background-color: #FAF9F6;
+}
+
+.bio__container {
+    display: grid;
+    position: absolute;
+    grid-auto-flow: column;
+    grid-template-areas: 'title'
+    'para'
+    'btn';
+    grid-template-rows: auto;
+    grid-template-columns: 100%;
+    row-gap: 20px;
+    max-width: 700px;
+    margin: 0px;
+    height: min-content;
+    z-index: 1;
+    width: auto;
+    padding-bottom: 70px;
+    margin: 200px 48px 0 48px;
+}
+
+.bio__container span {
+    color:#9A5B9A;
+}
+
+.bio__container h1 {
+    grid-area: title;
+    font-family: 'Cabin', sans-serif;
+    font-size: 2rem;
+    color:#131316;
+    justify-content: center;
+    z-index: 1;
+    margin: 0;
+}
+
+.bio__container p {
+    grid-area: para;
+    font-family: 'Cabin', sans-serif;
+    font-size: 1rem;
+    justify-content: center;
+    height: fit-content;
+    z-index: 1;
+    margin: 0;
+}
+
+.bio__container button {
+    grid-area: btn;
+    background: #9A5B9A;
+    color:#FAF9F6;
+    padding: 8px 8px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    font-family: 'Cabin', sans-serif;
+    font-size: 1rem;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 170px;
+    height: 50px;
+    z-index: 1;
+    margin: 20px 0;
+}
+
+@media screen and (max-width: 700px){
+    .bio__container {
+        margin: 200px 24px 0 24px;
+        max-width: 100%;
     }
 }
