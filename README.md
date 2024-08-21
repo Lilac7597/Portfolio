@@ -2,6 +2,8 @@
 
 This is my first website ever created with HTML, CSS, and JS! It is a portfolio website that will display information about me, as well as my experience, projects, and resume. It isn't done yet, but I'm still working on it!
 
+Access my website here! https://lerstudios.com/lilliana/
+
 ## Pages
 <ul>
   <li><b>Homepage</b>: Main page of the website. Not finished, but I've got the general layout!</li>
